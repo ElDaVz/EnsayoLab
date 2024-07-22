@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado de Productos{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Listado de Productos</h1>
+    <div class="row">
+        {% for producto in productos %}
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto.nombre }}</h5>
+                    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#img-{{ producto.id }}">
+                        Ver Imagen
+                    </button>
+                    <div id="img-{{ producto.id }}" class="collapse mt-3">
+                        <img src="{{ producto.imagen.url }}" class="img-fluid" alt="{{ producto.nombre }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+
+

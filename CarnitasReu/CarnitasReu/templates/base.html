@@ -1,0 +1,33 @@
+<!-- Ejemplo de uso de archivos estáticos en base.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CarnitasReu{% endblock %}</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'home' %}">CarnitasReu</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'lista_productos' %}">Productos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ producto.nombre }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ producto.nombre }}</h1>
+        <img src="{{ producto.imagen.url }}" class="img-fluid" alt="{{ producto.nombre }}">
+        <p>Precio: ${{ producto.precio }}</p>
+        <a href="{% url 'lista_productos' %}" class="btn btn-primary">Volver al Catálogo</a>
+    </div>
+</body>
+</html>
